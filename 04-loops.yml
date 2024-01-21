@@ -1,0 +1,20 @@
+- name: Loops
+  hosts: localhost
+  tasks:
+    - name: Loop Demo
+      ansible.builtin.debug:
+        msg: Hello , {{ item }}
+      loop:
+        - Ram
+        - John
+        - Steve
+
+    - name: Loop Demo on maps
+      ansible.builtin.debug:
+        msg: Hello , {{ item.name }}, Age of yours is {{ item.age }} years.
+      loop:
+        - { name: "Ram", age: 20, run: true }
+        - { name: "John", age: 30, run: true }
+        - { name: "Steve", age: 40, run: false }
+      when: item.run
+
