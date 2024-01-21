@@ -1,0 +1,6 @@
+- name: Print value form SSM
+  hosts: localhost
+  tasks:
+    - name: Print value
+      ansible.builtin.debug:
+        msg: "{{ lookup('amazon.aws.aws_ssm', 'test', region='us-east-1' ) }}"
