@@ -24,3 +24,12 @@
 #       ansible.builtin.debug:
 #        msg: {{ URL }}   # this value is starting with variable, hence need quotes, Either single or double. No matter what
 
+
+
+# Variable Priority
+
+# 1. Command line
+# 2. Task
+# 3. role (vars folder)
+# 4. play
+# 5. role (defaults folder)
