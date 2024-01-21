@@ -1,0 +1,26 @@
+- name: Demo on Vars
+  hosts: localhost
+  # If we declare variable here (play level) then all the tasks can access this variable
+  vars:
+    URL: play.google.com
+  tasks:
+    - name: Print Play level variable
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
+    - name: Print variable declared in task
+      vars:
+        URL: task.google.com
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
+
+  roles:
+    - demo
+
+# When the value is stating with variable then we need to give double quotes.
+#       ansible.builtin.debug:
+#        msg: URL = {{ URL }}   # this value is not starting with variable, hence no need of quotes
+
+#       ansible.builtin.debug:
+#        msg: {{ URL }}   # this value is starting with variable, hence need quotes, Either single or double. No matter what
+
