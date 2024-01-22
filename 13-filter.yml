@@ -9,6 +9,7 @@
         dest: /tmp/
         remote_Src: yes
         register: out
+      ignore_errors: yes
 
     - name: Print Host machine information
       ansible.builtin.debug:
