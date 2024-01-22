@@ -8,7 +8,7 @@
         src: https://nginx.org/download/nginx-1.22.1.zip
         dest: /tmp/
         remote_src: yes
-        register: out
+      register: out
       ignore_errors: yes
 
     - name: Print Host machine information
