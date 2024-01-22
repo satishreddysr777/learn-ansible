@@ -1,0 +1,10 @@
+- name: Register demo
+  hosts: localhost
+  tasks:
+    - name: Rum uptime command
+      ansible.builtin.shell: uptime
+      register: out
+
+    - name: Print shell output
+      ansible.builtin.debug:
+        msg: "{{ out }}"
