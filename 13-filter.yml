@@ -1,16 +1,14 @@
 - name: Filter demo
   hosts: localhost
   vars:
-    URL: https://nginx.org/download/nginx-1.25.3.zip
+    URL: https://nginx.org/download/nginx-1.22.1.zip
   tasks:
     - name: Download nginx zip
       ansible.builtin.unarchive:
-        src: https://nginx.org/download/nginx-1.22.1.zip
+        src: "{{ URL }}"
         dest: /tmp/
         remote_src: yes
-      register: out
-      ignore_errors: yes
 
     - name: Print Host machine information
       ansible.builtin.debug:
-        msg: "{{ out }}"
+        msg: "{{ URL | split('/') }}"
