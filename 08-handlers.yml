@@ -5,3 +5,8 @@
       ansible.builtin.template:
         src: sample.txt
         dest: /tmp/sample.txt
+
+  handlers:
+    - name: Say hello again
+      ansible.builtin.debug:
+        msg: Hello {{ name }} again!!
