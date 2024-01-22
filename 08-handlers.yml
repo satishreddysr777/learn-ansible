@@ -5,6 +5,7 @@
       ansible.builtin.template:
         src: sample.txt
         dest: /tmp/sample.txt
+      notify: Say hello again
 
   handlers:
     - name: Say hello again
