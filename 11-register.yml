@@ -10,7 +10,7 @@
         msg: "{{ out }}"
 
     - name: Rum LS command
-      ansible.builtin.shell: cat 02-vars.yml
+      ansible.builtin.shell: ls -l
       register: ls_out
 
     - name: Print shell LS output
