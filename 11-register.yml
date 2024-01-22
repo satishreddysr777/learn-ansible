@@ -8,3 +8,11 @@
     - name: Print shell output
       ansible.builtin.debug:
         msg: "{{ out }}"
+
+    - name: Rum LS command
+      ansible.builtin.shell: ls
+      register: ls_out
+
+    - name: Print shell LS output
+      ansible.builtin.debug:
+        msg: "{{ ls_out }}"
