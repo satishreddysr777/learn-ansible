@@ -11,4 +11,4 @@
 
     - name: Print Host machine information
       ansible.builtin.debug:
-        msg: "{{ URL | split('/') }}"
+        msg: "{{ URL | split('/') | last }}"
