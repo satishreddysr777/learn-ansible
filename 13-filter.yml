@@ -11,4 +11,4 @@
 
     - name: Print Host machine information
       ansible.builtin.debug:
-        msg: "{{ URL | split('/') | last }}"
+        msg: "{{ URL | split('/') | last | regex_replace('.zip') }}"
