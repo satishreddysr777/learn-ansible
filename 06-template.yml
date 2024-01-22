@@ -2,7 +2,7 @@
   hosts: localhost
   tasks:
     - name: Copy a file
-      ansible.builtin.copy:
+      ansible.builtin.template:
         src: sample.txt
         dest: /tmp/sample.txt
 
