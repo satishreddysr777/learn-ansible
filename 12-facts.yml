@@ -4,3 +4,7 @@
     - name: Print ansible facts
       ansible.builtin.debug:
         msg: "{{ ansible_architecture }}"
+
+    - name: Print Host machine information
+      ansible.builtin.debug:
+        msg: "{{ ansible_mounts }}"
