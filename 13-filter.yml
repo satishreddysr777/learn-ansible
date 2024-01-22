@@ -5,7 +5,7 @@
   tasks:
     - name: Download nginx zip
       ansible.builtin.unarchive:
-        src: {{ URL }}
+        src: "{{ URL }}"
         dest: /tmp/
         remote_Src: yes
         register: out
